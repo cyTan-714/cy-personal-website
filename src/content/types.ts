@@ -13,6 +13,8 @@ export type SkillGroup = {
 
 export type Profile = {
   name: string
+  initials: string // shown in the photo circle until a photo is added
+  photo?: string // a file in /public, e.g. '/photo.jpg'
   headline: string
   intro: string
   location: string
