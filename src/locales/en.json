@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "home": {
+    "viewWork": "View my work",
+    "downloadResume": "Download resume",
+    "contactMe": "Contact me",
+    "featured": "Featured",
+    "currentlyBuilding": "Currently building"
+  },
+  "about": {
+    "title": "About",
+    "lookingFor": "What I'm looking for",
+    "skillsProduction": "Skills: production experience",
+    "skillsBuilding": "Skills: currently building with",
+    "outsideWork": "Outside work"
+  },
+  "projects": {
+    "title": "Projects",
+    "intro": "Work projects are described at a high level, with client and internal details left out.",
+    "work": "Work",
+    "personal": "Personal",
+    "inProgress": "In progress",
+    "overview": "Overview",
+    "role": "My role",
+    "tech": "Tech",
+    "learned": "What I learned",
+    "links": "Links",
+    "back": "Back to projects",
+    "ping": "Ping the API"
+  },
+  "resume": {
+    "title": "Resume",
+    "download": "Download PDF",
+    "experience": "Experience",
+    "education": "Education",
+    "languages": "Languages"
+  },
+  "contact": {
+    "title": "Let's talk",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Location"
+  },
+  "footer": {
+    "builtWith": "Built with React and .NET"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "This page doesn't exist.",
+    "backHome": "Go back home"
+  },
+  "comingSoon": "Coming in Part {{part}}."
+}

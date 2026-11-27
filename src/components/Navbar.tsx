@@ -1,18 +1,24 @@
+import { useTranslation } from 'react-i18next'
 import { Link, NavLink } from 'react-router'
+import { useContent } from '../content'
 
+// `label` is a translation key from src/locales/en.json
 const links = [
-  { to: '/about', label: 'About' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/resume', label: 'Resume' },
-  { to: '/contact', label: 'Contact' },
-]
+  { to: '/about', label: 'nav.about' },
+  { to: '/projects', label: 'nav.projects' },
+  { to: '/resume', label: 'nav.resume' },
+  { to: '/contact', label: 'nav.contact' },
+] as const
 
 export default function Navbar() {
+  const { t } = useTranslation()
+  const { profile } = useContent()
+
   return (
     <header className="border-b border-slate-200">
       <nav className="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-y-2 px-6 py-4">
         <Link to="/" className="text-lg font-semibold text-slate-900">
-          Tan Chee Yang
+          {profile.name}
         </Link>
         <ul className="flex gap-4 text-sm sm:gap-6">
           {links.map((link) => (
@@ -27,7 +33,7 @@ export default function Navbar() {
                     : 'text-slate-500 hover:text-slate-900'
                 }
               >
-                {link.label}
+                {t(link.label)}
               </NavLink>
             </li>
           ))}
