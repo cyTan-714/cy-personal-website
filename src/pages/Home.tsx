@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { primaryButton, secondaryButton } from '../components/buttonStyles'
 import ProfilePhoto from '../components/ProfilePhoto'
 import ProjectCard from '../components/ProjectCard'
+import SectionHeading from '../components/SectionHeading'
 import { useContent } from '../content'
 
 export default function Home() {
@@ -47,9 +48,7 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
-          {t('home.featured')}
-        </h2>
+        <SectionHeading>{t('home.featured')}</SectionHeading>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {featured.map((project) => (
             <ProjectCard key={project.slug} project={project} />
@@ -58,9 +57,7 @@ export default function Home() {
       </section>
 
       <section className="rounded-xl bg-slate-50 p-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
-          {t('home.currentlyBuilding')}
-        </h2>
+        <SectionHeading>{t('home.currentlyBuilding')}</SectionHeading>
         <p className="mt-2 text-slate-700">{profile.currentlyBuilding}</p>
       </section>
     </div>

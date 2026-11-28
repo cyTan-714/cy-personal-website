@@ -3,7 +3,7 @@ import type { Profile } from '../types'
 export const profile: Profile = {
   name: 'Tan Chee Yang',
   initials: 'CY',
-  photo: 'images/my_photo_1.jpg',
+  photo: '/images/my_photo_1.jpg',
   headline: 'Software Engineer · PHP/Laravel & .NET',
   intro:
     "I build backend systems, REST APIs and production web applications. For three years I've delivered Laravel systems in fintech and enterprise, from database design to production support. Now I'm building with .NET too.",

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import type { Project } from '../content/types'
+import TagList from './TagList'
 
 type Props = {
   project: Project
@@ -11,8 +12,6 @@ const MAX_TAGS = 4
 
 export default function ProjectCard({ project }: Props) {
   const { t } = useTranslation()
-  const visibleTech = project.tech.slice(0, MAX_TAGS)
-  const hiddenCount = project.tech.length - visibleTech.length
 
   return (
     <Link
@@ -36,19 +35,9 @@ export default function ProjectCard({ project }: Props) {
       {project.context && <p className="text-sm text-slate-500">{project.context}</p>}
       <p className="mt-2 text-sm leading-relaxed">{project.summary}</p>
 
-      <ul className="mt-4 flex flex-wrap gap-1.5">
-        {visibleTech.map((tech) => (
-          <li
-            key={tech}
-            className="rounded-md bg-slate-50 px-2 py-0.5 text-xs text-slate-600 ring-1 ring-slate-200"
-          >
-            {tech}
-          </li>
-        ))}
-        {hiddenCount > 0 && (
-          <li className="px-1 py-0.5 text-xs text-slate-500">+{hiddenCount}</li>
-        )}
-      </ul>
+      <div className="mt-4">
+        <TagList items={project.tech} max={MAX_TAGS} />
+      </div>
     </Link>
   )
 }
