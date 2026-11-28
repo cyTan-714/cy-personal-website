@@ -87,8 +87,9 @@ export default function ProjectDetail() {
           <ul className="flex flex-wrap gap-3">
             {project.links.map((link) => (
               <li key={link.url}>
-                {/* Other sites open in a new tab */}
-                <a href={link.url} target="_blank" rel="noopener noreferrer" className={secondaryButton}>
+                {/* Other sites open in a new tab. rel="noopener" without "noreferrer",
+                    so GitHub's traffic stats can see that visitors came from this site. */}
+                <a href={link.url} target="_blank" rel="noopener" className={secondaryButton}>
                   {link.label}
                   <span aria-hidden="true" className="ml-1.5">↗</span>
                 </a>

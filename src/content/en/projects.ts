@@ -69,7 +69,7 @@ export const projects: Project[] = [
     learned:
       'Docker multi-stage builds, deploying automatically from GitHub, CORS, build-time vs runtime configuration, and free-tier trade-offs like cold starts.',
     links: [
-      { label: 'Live site', url: 'https://cy-personal-website.tancheeyang12.workers.dev' },
+      { label: 'Live site', url: 'https://tancheeyang.com' },
       { label: 'Frontend repo', url: 'https://github.com/cyTan-714/cy-personal-website' },
       { label: 'API repo', url: 'https://github.com/cyTan-714/cy-personal-website-api' },
     ],

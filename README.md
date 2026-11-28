@@ -1,75 +1,37 @@
-# React + TypeScript + Vite
+# cy-personal-website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend of my personal website: **[tancheeyang.com](https://tancheeyang.com)**
 
-Currently, two official plugins are available:
+I built this site to learn modern .NET by shipping something real. The backend lives in a separate repo: [cy-personal-website-api](https://github.com/cyTan-714/cy-personal-website-api).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech stack
 
-## React Compiler
+- React + TypeScript, built with Vite
+- Tailwind CSS for styling
+- React Router for the pages
+- i18next for interface text (English for now, ready for more languages without a rewrite)
+- Hosted on Cloudflare Workers, deployed automatically on every push to `main`
+- Cloudflare Web Analytics for visitor stats (no cookies)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project layout
 
-## Expanding the ESLint configuration
+| Folder | What's in it |
+|---|---|
+| `src/pages/` | One component per page |
+| `src/components/` | Shared pieces: navbar, footer, cards, buttons |
+| `src/content/` | The page content (profile, projects, experience), kept separate from the layout |
+| `src/locales/` | Short interface labels, one file per language |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Run it locally
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+The "Ping the API" button calls the URL in `.env.development` (`VITE_API_URL`). To see it work locally, run the API as well (`dotnet run` in the API repo).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Copyright
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+© 2026 Tan Chee Yang. All rights reserved.
+This code is public so you can see how the site is built. It isn't licensed for reuse.
