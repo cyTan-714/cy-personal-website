@@ -73,6 +73,7 @@ export const projects: Project[] = [
       { label: 'Frontend repo', url: 'https://github.com/cyTan-714/cy-personal-website' },
       { label: 'API repo', url: 'https://github.com/cyTan-714/cy-personal-website-api' },
     ],
+    showApiPing: true,
   },
   {
     slug: 'exercise-tracker',

@@ -31,7 +31,13 @@
     "learned": "What I learned",
     "links": "Links",
     "back": "Back to projects",
-    "ping": "Ping the API"
+    "ping": "Ping the API",
+    "pinging": "Waiting for a reply…",
+    "tryApi": "Try the API",
+    "pingIntro": "This site's API is a separate ASP.NET Core app running in Docker on Render. The button below calls it straight from your browser.",
+    "pingNote": "It runs on Render's free plan, which puts it to sleep when nobody is using it, so the first ping after a quiet spell can take about a minute.",
+    "pingReply": "Replied in {{seconds}} s",
+    "pingError": "Could not reach the API ({{reason}}). It may still be waking up, so try again in a moment."
   },
   "resume": {
     "title": "Resume",

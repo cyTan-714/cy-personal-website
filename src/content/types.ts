@@ -63,6 +63,7 @@ export type Project = {
   tech: string[]
   learned?: string
   links?: ExternalLink[]
+  showApiPing?: boolean // shows the "Ping the API" demo on this project's page
 }
 
 export type Job = {

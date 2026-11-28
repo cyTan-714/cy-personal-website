@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import type { Project } from '../content/types'
+import ProjectBadges from './ProjectBadges'
 import TagList from './TagList'
 
 type Props = {
@@ -11,23 +11,12 @@ type Props = {
 const MAX_TAGS = 4
 
 export default function ProjectCard({ project }: Props) {
-  const { t } = useTranslation()
-
   return (
     <Link
       to={`/projects/${project.slug}`}
       className="group block rounded-xl border border-slate-200 p-5 transition hover:border-slate-400 hover:shadow-sm"
     >
-      <div className="flex flex-wrap gap-2 text-xs font-medium">
-        <span className="rounded-full bg-slate-100 px-2 py-0.5 text-slate-600">
-          {project.kind === 'work' ? t('projects.work') : t('projects.personal')}
-        </span>
-        {project.inProgress && (
-          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-amber-800">
-            {t('projects.inProgress')}
-          </span>
-        )}
-      </div>
+      <ProjectBadges project={project} />
 
       <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:underline">
         {project.title}
